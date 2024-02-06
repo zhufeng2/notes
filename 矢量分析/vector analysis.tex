@@ -1,0 +1,56 @@
+\documentclass[UTF8]{article}
+\usepackage{ctex}
+\usepackage{anyfontsize}
+\usepackage{bookmark}
+\hypersetup{hidelinks}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5}
+\usepackage{tocbibind}
+\usepackage{geometry}
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\usepackage{mathrsfs}
+% \usepackage{newpxmath}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{esint} 
+\geometry{a4paper,scale=0.8}
+
+\title{vector analysis}
+\author{李承高}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\section{triple product}
+三重积的值是括号里面的两个矢量的线性组合，中间的矢量的系数是正的，例子：
+\begin{align*}
+    A\times (B\times C) = (A\cdot C)B-(A\cdot B)C
+\end{align*}
+\section{球坐标}
+\begin{align*}
+    \begin{cases}
+    &x=r\sin\theta \cos \varphi\\
+    &y=r\sin\theta \sin \varphi\\
+    &z=r\cos \theta
+\end{cases}
+\end{align*}
+\begin{align*}
+    f = \sqrt{(\pdv{x}{r})^2+(\pdv{y}{r})^2+(\pdv{z}{r})^2}=1\qquad g=r\qquad h=r\sin\theta
+\end{align*}
+\begin{align*}
+    &\nabla y = \frac{1}{f}\pdv{y}{r}+\frac{1}{g}\pdv{y}{\theta}+\frac{1}{h}\pdv{y}{\varphi}     \\
+    &\nabla \cdot \vec{y}= \frac{1}{fgh}(\frac{\partial}{\partial r} (gh\pdv{\vec{y}}{r})
+    +\frac{\partial}{\partial \theta}(fh\pdv{\vec{y}}{\theta})+\frac{\partial}{\partial \varphi}(fg\pdv{\vec{y}}{\theta}))\\
+    &\nabla^2 y = \frac{1}{fgh}(\frac{\partial}{\partial r} (\frac{gh}{f}\pdv{y}{r})
+    +\frac{\partial}{\partial \theta}(\frac{fh}{g}\pdv{y}{\theta})+\frac{\partial}{\partial \varphi}(\frac{fg}{h}\pdv{y}{\theta}))
+\end{align*}
+\section*{莱布尼兹法则}
+
+\end{document}

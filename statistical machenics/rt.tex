@@ -1,0 +1,298 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage[left=35mm,top=26mm,right=26mm,bottom=20mm]{geometry}
+\usepackage{lmodern}
+\geometry{a4paper}
+\usepackage{physics}
+
+\begin{document}
+\title{热统复习}
+\author{}
+\date{}
+\maketitle
+\section{热力学}
+\subsection{热力学的基本规律}
+\subsubsection{对于温度的理解}
+温度是以热平衡来来证明的，具体的我们可以这样表述：处于热平衡的两个系统，冷热程度相同，并且有一个共同的态函数，这个态函数就是温度，
+
+对于准静态过程的理解：从系统从初始状态到末态，是由许许多多的平衡的状态构成的，这样的过程就是准静态过程。
+
+对于热力学平衡的理解：热力学平衡是指经过无限长的时间，系统的宏观状态不在发生改变。
+\subsubsection{热力学第一定律（能量守恒定律的描述）}
+自然界的一切物质都具有能量，能量可以从一个物质转移到另一个物质，也可以从一种形式转化为另一种形式，在转移和转化的过程中，能量的总量保持不变。第一类永动机：不需要外界提供能量就可以做功，
+\subsubsection{内能和热容的引入}
+在绝热过程中，焦耳做的实验发现气体做功与路径无关，因此可以引入一个态函数内能，绝热过程（与外界没有热量的交换）
+现在我们引入热容：
+\begin{align*}
+         & C=\lim_{\Delta T \rightarrow 0} \frac{\Delta Q}{\Delta T}                                                          \\
+         & C_V=\lim _{\Delta T \rightarrow 0 }\frac{\Delta U}{\Delta T}=(\pdv{U}{T})_V                                        \\
+         & C_P=\lim_{\Delta T \rightarrow 0}\frac{\Delta U+p\Delta V}{\Delta T}=(\pdv{U}{T})_p+p(\pdv{V}{T})_p=(\pdv{H}{T})_p
+\end{align*}
+因此我们引入了一个状态函数焓：$H=U+pV$，这里的等压热容是定压条件，对于非定压条件，对于理想气体偏导写成导数，则根据
+\begin{align*}
+        dU=dQ-pdV-Vdp\Rightarrow \dv{U}{T}=\dv{Q}{T}-p\dv{V}{T}-V\dv{p}{T}
+\end{align*}
+对于一般简单的系统，根据麦克斯韦关系可以得到：
+\begin{align*}
+        C_p-C_V=T(\pdv{p}{T})_V(\pdv{V}{T})_p
+\end{align*}
+\subsubsection{理想气体的内能}
+对于理想气体，分子间隔足够大，气体足够稀薄，因此相互作用能量可以忽略，内能就和体积无关，下面是对于定容热容和定压热容在气体是理想气体是所满足的关系：
+\begin{align*}
+         & C_V=\dv{U}{T},C_p=\dv{H}{T}                                          \\
+         & H=U+pV=U+nRT                                                         \\
+         & \dv{H}{T}=\dv{U}{T}+nR \Rightarrow C_p-C_V=nR,\frac{C_p}{C_V}=\gamma
+\end{align*}
+\subsubsection{理想气体的卡诺循环}
+联想理想气体卡诺循环的图像分为四个过程：先是等温膨胀，然后是绝热膨胀，等温压缩，绝热压缩。绝热过程与外界不发生热量的交换$\Delta Q=0$。上诉说的是热机，对于制冷剂
+则把对应图像的箭头反过来，也就是把所有的过程都反过来执行一遍。
+
+效率问题：对于不可逆热机：$\eta=\frac{T_1-T_2}{T_1}\leq \frac{Q_1-Q_2}{Q_1}$,对于可逆热机：$\eta=\frac{Q_1-Q_2}{Q_1}$,
+因此在两个确定温度之间的热机中，可逆热机效率最高。卡诺定理推论：所有工作在两确定温度之间的可逆热机效率相等。（利用热力学第二定律和反证法证明）
+\subsubsection{热力学第二定律的理解}
+两种描述：开尔文描述：不可能让热量从低温物体转向高温物体而不产生其他影响，克劳修斯描述：不可能从单一热源吸收热量是之完全变为有用功而不产生其他的影响。
+理解：如果可以从低温热源吸收热量使之完全变为有用功而不产生其他的影响，那么地球可以看成一个系统，那么这个系统的能量就是用不完了，这就是第二类永动机，但是根据热力学
+第二定律这是不可能的。
+\subsubsection{熵}
+关于如何引入熵：吸收热量全部使用负数表示
+\begin{align*}
+         & \frac{T_1-T_2}{T_1}\leq \frac{Q_1-Q_2}{Q_1}\Rightarrow \frac{Q_1}{T_1}+\frac{Q_2}{T_2}\leq 0 \\
+         & \sum_{i} \frac{Q_i}{T_i}\leq 0\Rightarrow \oint \frac{dQ}{T}\leq 0
+\end{align*}
+对于可逆过程小于等于可以变为等于。从过程A到B的可逆过程引入了态函数熵：
+\begin{align*}
+         & S_B-S_A=\int_A^B\frac{dQ}{T}\Rightarrow dS=\frac{dQ}{T} \\
+         & dU=dQ-pdV\Rightarrow dU=TdS-pdV
+\end{align*}
+熵是一个状态函数跟过程是否可逆无关，在计算一个不可逆过程的熵增时，我们常常构造一个和同样初态和末态的可逆过程来进行计算。
+\subsubsection{热力学第二定律的数学表述}
+使用文字描述也就是熵增原理：对于孤立系统，因为孤立系统可以看成近似绝热的：
+\begin{align*}
+         & \oint \frac{dQ}{T}\leq 0                            \\
+         & \int_A^{B}\frac{dQ}{T}+\int_B^A \frac{dQ'}{T}\leq 0 \\
+         & S_B-S_A\geq 0
+\end{align*}
+当其是可逆过程时等于0，熵不变，但是对于一个独立系统，在系统达到平衡时，熵是不断增加的，在达到平衡时，达到最大，熵是衡量一个系统混乱程度的度量。
+\subsubsection{自由能和吉布斯函数}
+亥姆霍兹自由能是所有做功的态函数，这个F包含了两部分：体积功和非体积功；而吉布斯自由能仅包含了非体积功的态函数。所以说在只有体积功时，系统的焓在数值上是等于吸收的热量的
+\begin{align*}
+         & F=U-TS \\
+         & G=F-pV
+\end{align*}
+亥姆霍兹自由能在等温过程时，其减小量是大于系统对外界做功的，而对于吉布斯函数来说，等温等压时，吉布斯函数永远不增加。朝着吉布斯函数减小的方向进行的。
+\subsection{均匀物质的热力学性质}
+\subsubsection{麦克斯韦关系}
+\begin{align*}
+         & dU=TdS-pdV                    \\
+         & H=U+pV\Rightarrow dH=TdS+Vdp  \\
+         & F=U-TS\Rightarrow dF=-pdV-SdT \\
+         & G=F+pV\Rightarrow dG=Vdp-SdT
+\end{align*}
+因此我们可以得到特性函数$U(S,V),H(S,p),F(T,V),G(p,T)$
+关于如何记忆麦克斯韦关系直接看书了。利用麦克斯韦关系可以将一些不可直接通过实验方式测出来的量通过物态方程，热容等可以直接测量出来的额物理量
+表达出来。
+\subsubsection{特性函数法}
+特性函数法的热力学函数F,S,U
+因为最重要的函数是自由能函数和吉布斯函数，这里我们采用的是自由能函数：
+\begin{align*}
+        F=U-TS\Rightarrow dF & =TdS-pdV-TdS-SdT                    \\
+                             & =-SdT-pdV=\pdv{F}{T}dT+\pdv{F}{V}dV \\
+                             & \pdv{F}{T}=-S,\pdv{F}{V}=-p         \\
+\end{align*}
+在表面系统里面
+\begin{align*}
+         & \pdv{F}{T}=-S,\pdv{F}{A}=\sigma                                       \\
+         & F=\sigma A,S=-A \dv{\sigma(T)}{T},U=\sigma A -A\sigma T\dv{\sigma}{T}
+\end{align*}
+在弹簧系统里
+\begin{align*}
+         & \pdv{F}{T}=-S,\pdv{F}{x}=Ax                                      \\
+         & F=F(T,0)+\frac{1}{2}A(T)x^2,S=-\frac{1}{2}\dv{A(T)}{T}x^2,U=F+TS
+\end{align*}
+表面系统:$\bar{d}W=\sigma dA$，电介质:$\bar{d}W=VEdD$，磁介质:$\bar{d}W=VHdB$，弹簧系统:$\bar{d}W=Fdx$。
+\subsection{单元系相变}
+\subsubsection{热动平衡判据}
+我们思考的是对于某一个平衡判据的一阶导数或者是二阶导数和0的大小关系，又因为虚变动是一个自发的过程，
+因此是不可能等于0的，可逆过程不能是自发的。因此在这里我们给出一个例子：例如对于自由能判据
+\begin{align*}
+         & F=U-TS\Rightarrow \delta F= \delta U -T\delta S-S\delta T \\
+         & \delta F \le T\delta S- p\delta V--T\delta S-S\delta T    \\
+         & \delta F \leq -p\delta V-S\delta T
+\end{align*}
+因此在等温等体的时候F的一阶微分是小于0的，在达到平衡时，F具有最小值。
+还有需要注意的是，一阶导数判断的是平衡判据，二阶导数判断的是稳定平衡判据，因此我们继续推出其达到平衡稳定条件的充分必要条件
+\begin{align*}
+         & \Delta F=\delta F+\frac{1}{2}\delta^2 F \\
+\end{align*}
+因此要使F具有最小值，其一阶导数为0的情况下，二阶导数必须大于0才是一个凹函数，才有极小值。
+\subsubsection{开系的热力学方程}
+之前我们研究的都是闭系的热力学方程，是物质的量不会发生改变的系统，现在的开系就是物质的量会发生改变的系统。
+因此只需要对前面学过的特性函数的后面加一个$\mu dn$就可以了，$\mu$是化学势，n是物质的量
+\begin{align*}
+        dF=-pdV-SdT+\mu dn
+\end{align*}
+类似的还有$U,H,G,F$。
+\subsubsection{单元复相平衡条件}
+强度性质：不随物质多少或者系统大小而改变的物理性质
+广延性质：和物质的多少以及系统的大小而改变的物理性质
+对于一个孤立系统的总的U，V，n应该是固定的，因此我们可以以这个为前提来推出单元复相平衡条件。
+\begin{align*}
+         & U^\alpha+U^\beta=C1                                                                         \\
+         & V^\alpha+V^\beta=C2                                                                         \\
+         & n^\alpha+n^\beta=C3                                                                         \\
+         & dU=TdS-pdV+\mu dn\Rightarrow dS=\frac{dU}{T}+\frac{pdV}{T}-\frac{\mu dn}{T}                 \\
+         & \delta S^\alpha +\delta S^\beta = \frac{\delta U^\alpha+p^\alpha \delta V^\alpha}{T^\alpha}
+        +\frac{\delta U^\beta+p^\beta \delta V^\beta}{T^\beta}
+        -\frac{\mu ^\alpha \delta n^\alpha}{T^\alpha}-\frac{\mu ^\beta \delta n^\beta}{T^\beta}
+\end{align*}
+然后根据在平衡时，S有极大值，得出还未达到平衡时$\delta S>0$时，系统的状态参量将如何变化。
+\subsection{关于热力学第三定律的两种表述的理解}
+两种表述：第一种表述是能特斯通过物理实验规律，化学反应总是朝着放热的方向即$\Delta H<0$的方向进行的，在低温情况下，$\Delta G$和$\Delta H$往往得到相似的结论，
+能斯特根据这个物理现象分析得到了在等温条件下，温度趋于0时，熵变将趋于0，能斯特根据他这个表述进行了推论：即绝对零度不可到达。
+\section{统计力学}
+\subsection{统计力学基础}
+几种常见的粒子运动的量子描述：一维谐振子：$(n+\frac{1}{2})\hbar \omega$,转子：$\frac{L^2}{2I}=\frac{\lambda \hbar^2}{2I}
+        =\frac{(l+1)l\hbar^2}{2I}$,近独立的粒子，玻色子。费米子，玻色子和费米子的区别：玻色子的自旋量子数是整数的，费米子的自旋量子数是半整数的，
+费米子还满足泡利不相容原理：两个全同的费米子不能处在同一个量子态上。费米子和玻色子都是不可分辨的。\textbf{对于处在平衡状态下的孤立系统，可以认为系统的各个
+        微观状态出现的可能的概率是相同的}，在满足经典极限条件时，三种分布是等价的。根据三种分布的函数形式，经典极限条件为：$e^\alpha>>1$,根据微观状态数的
+数学形式，等价的条件是：$\frac{a_l}{\omega_l}<<1$，可以这样理解，平均下来，每个量子态上的粒子数是远小于1的（非简并性条件）。
+注意在涉及到系综理论之前，我们都是讨论的是具有NEV的系统。还要注意的是求和到底是对那个指标求和，应该是对能级数求和.
+\subsection{玻尔兹曼统计}
+对公式的各个物理量的理解：
+\begin{align*}
+         & U=E=\sum_l \varepsilon_l a_l =\sum_l \omega_l e^{-\alpha-\beta\varepsilon_l} \varepsilon_l \\
+         & Z_1 = \sum _l \omega_l e^{-\beta \varepsilon_l}                                            \\
+         & \sum_l a_l = N,\beta=\frac{1}{kT}                                                          \\
+         & U=-N\pdv{\ln Z_1}{\beta},p=\frac{N}{\beta}\pdv{\ln Z_1}{V}                                 \\
+         & S=Nk(\ln Z_1 -\beta \pdv{\ln Z_1}{\beta})=k\ln \Omega
+\end{align*}
+这里的$\varepsilon_l$表示的是能级，$a_l$是粒子的分布函数，这里的$\omega_l$表示的是简并度，对于每个能级对应多少个量子态，如果是非简并的，则$\omega_l=1$，如果是自由粒子并且是
+在箱归一化之后的情况，简并度推导：
+\begin{align*}
+         & p_x=\frac{2\pi \hbar}{L}n_x\Rightarrow n_x=\frac{p_x L}{2\pi \hbar} \\
+         & p_y=\frac{2\pi \hbar}{L}n_y\Rightarrow n_y=\frac{p_y L}{2\pi \hbar} \\
+         & p_z=\frac{2\pi \hbar}{L}n_z\Rightarrow n_z=\frac{p_z L}{2\pi \hbar} \\
+         & dn_x dn_y dn_z = \frac{V}{h^3}dp_x dp_y dp_z
+\end{align*}
+对于满足经典极限条件的玻色系统和费米系统，其他关系式均成立，除了熵需要除以一个粒子交换数：$N!$
+\begin{align*}
+        S=k\ln \frac{\Omega}{N!}=k\ln \Omega - k\ln N!
+\end{align*}
+熵是表示系统混乱程度的量，因此系统的围观状态数越多，则表示系统越混乱，熵越大。
+\subsection{玻色统计}
+公式：
+\begin{align*}
+         & \varXi = \prod _l (1-e^{-\alpha-\beta\varepsilon_l})^{-\omega_l}                     \\
+         & \overline{N}=-\pdv{}{\alpha}\ln\varXi\quad U=-\pdv{}{\beta}\ln \varXi                \\
+         & p=\frac{1}{\beta}\pdv{}{V}\ln \varXi \quad \beta=\frac{1}{kT},\alpha=-\frac{\mu}{kT} \\
+         & S=k(\ln \varXi +\alpha\overline{N}+\beta U)\quad S=k\ln \Omega
+\end{align*}
+\subsection{费米统计}
+对于费米统计，除了配分函数改变了，其他公式都没变，费米分布函数是加号
+\begin{align*}
+        \varXi = \prod_l(1+e^{-\alpha-\beta\varepsilon})^{\omega_l}
+\end{align*}
+\subsection{经典统计}
+除了简并度是和玻尔兹曼统计是不同的其他都是一样的：那么这里我们主要思考的是这几种统计额关系，在粒子全同性可以忽略时，（定域系统或者满足经典极限条件）此时
+玻尔兹曼统计是适用的，但是经典的粒子除了可以是分辨的，还满足其能级不能是量子化的，因此还需要满足条件能量密集（$\Delta \varepsilon << kT$）。量子统计能级并不一定
+是分立的。
+\begin{align*}
+        a_l = \frac{\Delta \omega_l}{h_0^r} e^{-\alpha-\beta \varepsilon_l}
+\end{align*}
+其他都是和玻尔兹曼统计一样的。其中$\Delta \omega_l$是广义坐标(q,p)体积元
+\subsection{系统理论}
+\subsubsection{微正则系综}
+刘维尔定理的说明：刘维尔定理的数学表达形式：$\dv{\rho}{t}=0$,全导数等于0证明其对时间，坐标，动量的偏导数均为0，因此处在某一个态的系统的概率在各个坐标以及动量，时间
+下是不变的，这个就是等概率原理，满足系统平衡条件的数学形式:$\pdv{\rho}{t}=0$，这个意思就是在某一固定点的概率是不会变了，但是在其他点的概率可能是会改变的，根据这个
+只能得到系统是稳定的，处于平衡条件下的，但是无法得到等概率原理，因此微正则系综主要是得到了等概率原理，并推导出了后面的正则系综。各态历经假说是玻尔兹曼提出来的
+，但是这个假说在数学上证明是不成立的，是由于外界是存在很多微扰项才使得各态历经假说是成立的。各态历经说的是，时间只要是无限长，那么系统的每个状态都可以出现。
+\subsubsection{正则系综}
+有一个系统和一个巨大的热库与之进行能量的交换，设系统的能量为$E_0$，巨大热库的能量为$E_r$，总能量为E，由于$E>>E_0$，当系统处于$E_s$态时，因此系统的微观状态数是和巨大热库
+的微观状态数是相同的为：$\Omega(E-E_s)$，由等概率原理可以知道，系统处于s态的概率$\rho \propto \Omega(E-E_s)$,根据微正则得到配分函数以及一系列热力学量的
+公式:
+\begin{align*}
+        Z=\sum_s e^{-\beta E_s}
+\end{align*}
+除了S和巨配分函数得到的热力学量不同，其他都是一样的，因为配分函数中少了$\alpha$，所以S去掉了含$\aleph$的项，注意$E_s$是系统在某个态的能量。
+经典配分函数：
+\begin{align*}
+        Z=\frac{1}{N! h^{Nr}}\int e^{-\beta E_s} d\Omega
+\end{align*}
+\subsubsection{巨正则系综}
+\subsection{能量均分定理}
+首先先使用经典统计做一下：对其中的一个体积元进行分析：
+\begin{align*}
+        \overline{\frac{1}{2}a_1 p_1^2} = \frac{E}{N} & =\frac{1}{N} \varepsilon_1 a_1                                                    \\
+                                                      & = \frac{1}{N} \iint \frac{1}{2}a_1^2p_1^2 e^{-\alpha-\beta \frac{1}{2}a_1^2p_1^2}
+        \frac{dq_1 dp_1}{h_0}                                                                                                             \\
+                                                      & =\frac{1}{2\beta}\frac{1}{Z}\iint e^{-\beta\varepsilon} \frac{dp_1 dq_1}{h_0}     \\
+                                                      & =\frac{1}{2\beta}=\frac{1}{2}kT
+\end{align*}
+上面对dp积分时用了一次分部积分。
+\subsection{理想气体物态方程}
+玻尔兹曼统计讨论：
+\begin{align*}
+         & \omega_l = \frac{V}{h^3}dp_x dp_y dp_z                                                                   \\
+         & Z_1 = \frac{V}{h^3}\iiint e^{-\frac{\beta}{2m}(p_x^2+p_y^2+p_z^2)}=V(\frac{2m\pi}{h^2\beta})^\frac{3}{2}
+\end{align*}
+带入求压强的公式可以得到理想气体物态方程$ p = \frac{NkT}{V}$,理想气体是满足经典极限条件的，因此这几种分布是等效的。在这里我们又引入了经典极限条件的另外一种
+表示方法，引入了德布罗意波长，$n\lambda^3<<1$,这个式子意味着体积在$\lambda^3$内的粒子数远小于1。一般气体都是满足经典极限条件的，气体越稀薄，温度越高，质量越大
+则越容易满足经典极限条件。
+
+利用正则系综证明也是需要掌握的，同样我们是利用的正则系综的经典表达式:
+\begin{align*}
+         & Z=\frac{1}{N!h^{Nr}}\int e^{-\beta E} d\Omega \quad E=\sum_i \frac{p_i^2}{2m}                                                                          \\
+         & Z=\frac{1}{N! h^{Nr}} \prod_i^N \int e^{-\beta \frac{p_x^2+p_y^2+p_z^2}{2m}}dp_xdp_ydp_zd^3q_i=\frac{V^N}{N!h^{Nr}}(\frac{2\pi m}{\beta})^\frac{3N}{2} \\
+         & p=\frac{Nkt}{V}
+\end{align*}
+
+\subsection{理想气体的内能和热容}
+虽然理想气体是非定域系统，但是其满足经典极限条件，因此可以使用经典统计来分析，现在采用玻尔兹曼统计来做的话，由于振动的能级间距$\hbar \omega >> kT$，
+因此能级是分离的，所以可以根据配分函数近似得到，在常温下，振动自由度是对热容没有贡献的，几乎所有的振子都被冻结在了基态。其实在这里我还要提醒一下该如何引入特征温度
+例如：对于含有kT的项，对于谐振子来说就是$\frac{\hbar \omega}{kT}$,因此我们可以引入特征温度：$\hbar \omega = k\theta$,在将这个特征温度代入回原来的含有
+T的项当中，在根据特征温度和kT的关系来判断在什么情况下是经典的，在什么情况下是量子的，由于$\hbar \omega >> kT$，导致振子必须取得$\hbar\omega$的能量才能使得
+振子跃迁到激发态,而在$T<<\theta$时，这样的概率是很小的，特征温度按我的理解来看应该是两个能级之差对应的特征温度。
+按照这样的思路，我们也可以得出为什么一般温度下，电子对热容是没有贡献的,电子被冻结在基态。
+在$\theta >> T$下，
+\subsection{固体热容的爱因斯坦理论}
+在分析上面的特征温度之后，固体热容的爱因斯坦理论也应该好做了。爱因斯坦在这里提出了一个模型，\textbf{就是假设固体内热运动是由3N个振动频率相同的振子组成的}，
+因此我们采用玻尔兹曼统计：
+\begin{align*}
+         & \varepsilon = (\frac{1}{2}+n)\hbar \omega \quad Z_1 = \sum_n e^{-\beta (n+\frac{1}{2})\hbar \omega}                          \\
+         & 1+x+x^2+x^3+\cdots+x^n=\frac{1}{1-x} \quad \quad  |x|<1                                                                      \\
+         & Z_1=\frac{e^{-\beta \hbar\omega/2}}{1-e^{-\beta \hbar \omega}}                                                               \\
+         & U = 3N\frac{\hbar \omega}{2}+3N\hbar \omega \frac{1}{e^{\beta\hbar \omega}-1}                                                \\
+         & C_V=\pdv{U}{T}=3Nk\frac{(\hbar\omega/kT)^2e^{\frac{\hbar\omega}{kT}}}{(e^{\frac{\hbar}{kT}}-1)^2} \quad\hbar\omega=k\theta_E \\
+         & C_V=3Nk\frac{(\frac{\theta}{T})^2 e^{\frac{\theta}{T}}}{(e^\frac{\theta}{T}-1)^2}
+\end{align*}
+因此分析当$T>>\theta$时，才能使得谐振子跃迁到激发态的概率很大，此时近似可以得到$C_V=3Nk$，这是符合能量均分定理的，因为前面满足了经典极限条件能级间距远小于
+kT，可以看成是连续的，经典统计是适用的。而$T<<\theta$时，不满足经典极限条件，并且不能看成是连续的了，此时可以忽略即$C_V=0$,这个是根据上面$C_V$的公式来的。
+
+如果使用正则系综来分析:
+\begin{align*}
+        Z & =\sum_n e^{-\beta \sum_i (n_i+\frac{1}{2})\hbar\omega_i}                     \\
+          & =\prod_i^{3N}\sum_ne^{-\beta(n+\frac{1}{2})\hbar \omega_i}                   \\
+          & =\prod_i^{3N} \frac{e^{-\beta \hbar\omega_i/2}}{1-e^{-\beta \hbar \omega_i}} \\
+\end{align*}
+这里需要注意指标到底是对什么求和,例如如果求总能量就是对每一个谐振子的能量进行相加,配分函数前面的求和才是对所有的能级求和,因此我们得到:
+\begin{align*}
+         & C_V=\pdv{U}{T}=\prod_i^{3N}k\frac{(\hbar\omega/kT)^2e^{\frac{\hbar\omega}{kT}}}{(e^{\frac{\hbar}{kT}}-1)^2} \quad\hbar\omega=k\theta_E
+        \\& C_V=3Nk\frac{(\frac{\theta}{T})^2 e^{\frac{\theta}{T}}}{(e^\frac{\theta}{T}-1)^2}
+\end{align*}
+后面的分析是和前面一样的.
+\subsection{玻色-爱因斯坦凝聚}
+首先现象是在$n\lambda^3\geq 2.612$时，就会出现独特的玻色-爱因斯坦凝聚，谈一谈对其是如何理解的：结合基态粒子数和总粒子数的关系式
+进行理解：$n_0=n(1-(\frac{T}{T_c})^\frac{3}{2})$,$T_c$是临界温度，在0K时，全部的粒子都到基态
+上，上面的公式表明在$T<T_c$时，就有宏观量级的粒子在基态凝聚，这一现象就成为玻色-爱因斯坦凝聚。
+\subsection{金属中的自由电子气体}
+在弱简并或者非简并情况下，三种分布是等价的，因此在这里单独讨论电子气体，就是将其看成是强简并的，只能用费米统计做，而不能用玻尔兹曼或者经典统计做。
+在复习一下经典极限条件$e^\alpha>>1 or n\lambda^3<<1$,对于电子这种强简并性气体，条件正好是相反的，现在我们来具体分析：
+\begin{align*}
+         & \text{每个态的粒子数:}\frac{a_l}{\omega_l}=\frac{1}{e^{\frac{\varepsilon-\mu}{kT}+1}}                                                      \\
+         & \text{考虑到自旋对应于两个状态，则量子态数：}2 \frac{2\pi V}{h^3}(2m)^{\frac{3}{2}}\varepsilon^\frac{1}{2}d\varepsilon                     \\
+         & \text{当T=0时每个态的粒子数：}f=1\quad \varepsilon<\mu(0),f=0 \quad \varepsilon>\mu(0)                                                     \\
+         & \text{此时粒子数为每个态的粒子数乘以有多少个态：}N=\int _0^{\mu(0)}\frac{4\pi V}{h^3}(2m)^{\frac{3}{2}}\varepsilon^\frac{1}{2}d\varepsilon
+\end{align*}
+上面的式子积分出来的结果是$(\frac{3\pi^2N}{V})^\frac{2}{3}\frac{\hbar^2}{2m}$,这个就是电子的费米能级，又有$U=\sum_l a_l \varepsilon_l$，可以得出
+U(0),$p(0)=\frac{2}{3}\frac{U(0)}{V}$,可以求出简并压，这个简并压是被电子粒子之间的吸引力所补偿。
+\end{document}

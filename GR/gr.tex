@@ -1,0 +1,121 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{lmodern}
+\geometry{scale=0.8}
+
+
+\begin{document}
+\title{广相复习}
+\author{}
+\date{}
+\maketitle
+1.在假定空间平坦及均匀各向同性的情况下, 时空度规可写为
+$$
+     d s^{2}=-d t^{2}+a^{2}(t)\left(d x^{2}+d y^{2}+d z^{2}\right)
+$$
+$a(t)$为宇宙尺度因子，是时间的函数。在只存在暗能量的情况下，
+引力场方程为$R_{uv}=-\Lambda g_{uv}$,其中，$\Lambda>0$为常数。给定条件$a(T)=a_0$，
+求解$a(t)$，即尺度因子随时间的演化。\\
+解：涉及到只求里奇张量时，可以不用求黎曼张量，具体解法如下：
+\begin{align*}
+      & R_{\mu \lambda \nu}^{\lambda}=-\Gamma _{\mu \lambda ,\nu}^{\lambda}+\Gamma_{\mu \nu ,\lambda}^{\lambda}-\Gamma_{\mu \lambda}^{\sigma}
+     \Gamma_{\sigma \nu }^{\lambda}+\Gamma_{\mu \nu}^{\sigma}\Gamma_{\sigma \lambda}^{\lambda}                                                \\
+      & g_{tt}=-1,g_{ii}=a^2                                                                                                                  \\
+      & \Gamma_{ti}^{i}=\frac{\dot{a}}{a},\Gamma_{ii}^t=a\dot{a}                                                                              \\
+      & \text{其中不为0的分分量有：}R_{tt},R_{ii}                                                                                             \\
+      & R_{tt}=R_{txt}^{x}+R_{tyt}^{y}+R_{tzt}^{z}=\frac{3\ddot{a}}{a}                                                                        \\
+      & R_{ii}=-(\ddot{a}a+2\dot{a}^2)                                                                                                        \\
+      & \text{对应分量相同：}\frac{3\ddot{a}}{a}=\Lambda,-(\ddot{a}a+2\dot{a}^2)=-\Lambda a^2,a=a_0e^{\sqrt{\Lambda} (t-T)/3}
+\end{align*}
+
+2.对于三位度规球：$ds^2=d\theta^2+\sin^2\theta d\varphi^2+\cos^2 \theta d\psi^2$,求联络，曲率张量，里奇张量，标量曲率。\\
+解：首先求得度规为：$g_{\theta\theta}=1,g_{\varphi\varphi}=\sin^2\theta,g_{\psi\psi}=\cos^2\theta$,然后计算出不为0的联络为
+$\Gamma_{\theta \varphi}^{\varphi}=\frac{\cos \theta}{\sin \theta},
+     \Gamma_{\theta \psi}^{\psi}=-\frac{\sin \theta}{\cos \theta},\Gamma_{\varphi \varphi}^{\theta}=-\sin \theta\cos \theta,
+     \Gamma_{\psi \psi}^{\theta}=\sin \theta\cos \theta$
+\begin{align*}
+      & R_{\lambda \mu \nu}^{\rho}=-\Gamma _{ \lambda\mu ,\nu}^{\rho}+\Gamma_{\lambda \nu ,\mu}^{\rho}-\Gamma_{\lambda \mu}^{\sigma}
+     \Gamma_{\sigma \nu }^{\rho}+\Gamma_{\lambda \nu}^{\sigma}\Gamma_{\sigma \mu}^{\rho}                                                               \\
+      & \text{根据对称性和}\mu\neq\nu\text{不为0的黎曼张量分量为：}R_{\varphi\theta\varphi\theta},R_{\psi\theta\psi\theta},R_{\varphi\psi\varphi\psi},
+     R_{\varphi\psi\varphi\theta},R_{\varphi\psi\psi\theta},R_{\varphi\theta\psi\theta}                                                                \\
+\end{align*}
+这里的上下指标变换需要乘以度规！！！
+\begin{align*}
+     R_{\theta\psi\theta}^{\psi}     & =1,R_{\theta\varphi\theta}^{\varphi}=1,R_{\psi\varphi\psi}^{\varphi}=\cos^2 \theta \\
+     R_{\psi\varphi\theta}^{\varphi} & =0,R_{\theta\psi\theta}^{\varphi}=0,R_{\psi\psi\theta}^{\varphi}=0
+\end{align*}
+将所有的指标写成下指标的形式：
+\begin{align*}
+      & R_{\varphi\theta\varphi\theta}=\sin^2\theta,R_{\psi\theta\psi\theta}=\cos^2\theta,R_{\varphi\psi\varphi\psi}=\sin^2\theta\cos ^2\theta \\
+      & R_{\varphi\psi\varphi\theta}=R_{\varphi\psi\psi\theta}=R_{\varphi\theta\psi\theta}=0
+\end{align*}
+根据里奇张量的公式：
+\begin{align*}
+      & R_{\theta\theta}=g^{\varphi\varphi}R_{\varphi\theta\theta\varphi}+g^{\psi\psi}R_{\psi\theta\theta\psi}=-2               \\
+      & R_{\psi\psi}=g^{\theta\theta}R_{\theta\psi\psi\theta}+g^{\varphi\varphi}R_{\varphi\psi\psi\varphi}=-2\cos^2\theta       \\
+      & R_{\varphi\varphi}=g^{\theta\theta}R_{\theta\varphi\varphi\theta}+g^{\psi\psi}R_{\psi\varphi\varphi\psi}=-2\sin^2\theta
+\end{align*}
+因此标量曲率为：注意这里还是要乘以度规！！！
+\begin{align*}
+     R=g^{\theta\theta}R_{\theta\theta}+g^{\psi\psi}R_{\psi\psi}+g^{\varphi\varphi}R_{\varphi\varphi}=-6
+\end{align*}
+
+3.引入场强张量 $F^{\mu v}, F^{\mu v}=-F^{v \mu}, \mu, v=0,1,2,3$ ，
+其中 $F^{0 i}=E^{i}, F^{i j}=\varepsilon^{i j k} B_{k}, i, j, k=1,2,3$, 证明麦克斯韦方程组
+$$
+     \begin{array}{ll}
+          \varepsilon^{i j k} \partial_{j} B_{k}-\partial_{0} E^{i}=4 \pi J^{i} & \partial_{i} E^{i}=4 \pi J^{0} \\
+          \varepsilon^{i j k} \partial_{j} E_{k}+\partial_{0} B^{i}=0           & \partial_{i} B^{i}=0
+     \end{array}
+$$
+可㝍为
+$$
+     \partial_{\mu}F^{\mu\nu}=-4\pi J^{\nu}\qquad
+     \partial_{\mu} F_{v \lambda}+\partial_{\nu} F_{\lambda \mu}+\partial_{\lambda} F_{\mu v}=0
+$$
+并得出电荷守恒方程 $\quad \partial_{\mu} J^{\mu}=0$.
+(注意: $F_{\mu v}=\eta_{\mu \nu} \eta_{v \sigma} F^{\lambda \sigma}$, 所以 $F_{0 i}=\eta_{00} F^{0 i}=-F^{0 i}, F_{i j}=F^{i j}$ )\\
+解：ijk都是表示的分量，$i,j,k=1,2,3$
+\begin{align*}
+     \text{由前两个式子可以得出：} & \partial_{j}F^{ij}-\partial_0 F^{oi}=4\pi J_i \\
+                                   & \partial_0F^{i0}=0,\partial_0F^{00}=0         \\
+                                   & \partial_i F^{0i}=4\pi J^0
+\end{align*}
+由上述式子可以推出要证明的第一个式子
+\begin{align*}
+     \text{乘以度规进行上下指标的置换：} & -F_{0i}=E_i,B^{i}=\frac{1}{2}\varepsilon^{ijk}F_{jk}                               \\
+     \text{代入第三个式子}               & \frac{1}{2}\varepsilon^{ijk}(2\partial_{j}F_{k0}+\partial_0F_{jk})=0               \\
+                                         & \frac{1}{2}\varepsilon^{ijk}(\partial_kF_{0j}+\partial_jF_{k0}+\partial_0F_{jk})=0 \\
+     \text{上式对jk求和可以得出：}       & \partial_kF_{0j}+\partial_jF_{k0}+\partial_0F_{jk}=0                               \\
+\end{align*}
+\begin{align}
+     \text{对第四个式子：}\partial_iF_{jk}+\partial_kF_{ij}+\partial_jF_{ki}=0
+\end{align}
+上面已经得出来对于一个指标一个0和没有0的情况，由于三个指标都需要变成$\mu\nu\lambda$，所以还有两个0和三个0的情况，上面是式子是对i
+指标的情况，其他的指标和i指标是类似的，因此只需要对一个指标求出来了，其他指标也就求出来了。\\
+对最后一个式子的证明,利用对称性：
+\begin{align*}
+     \partial_{\nu}F^{\nu\mu}                & =-4\pi J^{\mu}                           \\
+     \partial_{\mu}\partial_{\nu}F^{\nu \mu} & =-4\pi \partial_{\mu}J^{\mu}             \\
+                                             & =-\partial_{\mu}\partial_{\nu}F^{\mu\nu} \\
+                                             & =-\partial_{\nu}\partial_{\mu}F^{\nu\mu}
+\end{align*}
+4.电磁场和电流耦合的作用量为
+$$
+     S\left[A_{\mu}\right]=\int d^{4} x\left(-\frac{1}{4} F^{\mu \nu} F_{\mu \nu}+A_{\mu} J^{\mu}\right),
+$$
+其中 $F_{\mu \nu}=\partial_{\mu} A_{\nu}-\partial_{\nu} A_{\mu}, J^{\mu}=(\rho, \vec{J})$ 为给定的四维电流密度,
+对 $A_{\mu}$ 作变分, 得出电磁场 运动方程 $\partial_{\mu} F^{\mu v}=-J^{v}$\\
+解：注意这里的电磁场张量是反对称的,并且这里有$\nu \mu$代表求和
+\begin{align*}
+      & \delta(F^{\nu \mu }F_{\nu\mu})=2F^{\mu\nu}\delta F_{\nu\mu}                             \\
+      & F^{\mu\nu}\delta(\partial_\mu A_\nu-\partial_\nu A_{\mu})=F^{\mu\nu}\partial_\mu \delta
+     A_{\nu}+F^{\nu\mu}\partial_\nu\delta A_{\mu}=2F^{\mu\nu}\partial_\mu \delta A_{\nu}
+\end{align*}
+\begin{align*}
+     \delta S[A_\nu] & =\int d^4x(-F^{\mu\nu}\partial_\mu\delta A_\nu+J^\nu \delta A_\nu)                                         \\
+                     & =\int d^4x (-\partial_-\mu(F^{\mu\nu}\delta A_{\nu})+\delta A_nu\partial_\mu F^{\mu\nu}+J^\nu \delta A_nu) \\
+                     & =\int d^4x (\partial_\mu F^{\mu\nu}+J^{\nu})\delta A_\nu=0
+\end{align*}
+\end{document}

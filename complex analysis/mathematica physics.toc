@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}复变函数}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}C-R定理}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}二维的拉普拉斯方程}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}极坐标形式下的C-R条件的证明}{1}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}柯西定理}{1}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}柯西积分公式}{2}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}对于留数理论的思考}{2}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}利用留数理论计算实数积分}{2}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}物理当中的几类常见的积分}{3}{subsection.1.8}%
+\contentsline {section}{\numberline {2}数学物理方程}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}三类基本的方程}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}麦克斯韦组的积分形式到微分形式}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}傅里叶级数}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}傅里叶变换}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Deferential Equation}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}pde的时间坐标的变量分离}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}级数解法}{5}{subsection.3.2}%

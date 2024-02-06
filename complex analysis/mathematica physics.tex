@@ -1,0 +1,257 @@
+\documentclass[UTF8]{article}
+\usepackage{anyfontsize}
+\usepackage{ctex}%中文
+\usepackage{amsmath}
+\usepackage{graphicx}%插图
+\usepackage{bookmark}
+\hypersetup{hidelinks}
+\usepackage{amstext}%数学环境中的文字
+\usepackage{esint}%曲面积分符号
+\usepackage{geometry}
+
+
+\geometry{a4paper,scale=0.8}
+\begin{document}
+\title{Mathematical Physics}
+\author{zhufeng}
+\date{}
+\maketitle
+\thispagestyle{empty}%这一页的页码没有
+\newpage%另起一页制作目录
+\tableofcontents
+\thispagestyle{empty}%这一页的页码没有
+\newpage
+\pagenumbering{arabic}%从正文开始计算页码
+% \setcounter{page}{1}
+\section{复变函数}
+\subsection{C-R定理}
+这个定理是由复变函数的连续可导性得出来的，由于当极限存在时，是以任意方式趋于0的，那么我们先以实轴趋于0的情况
+\begin{align*}
+	\lim_{\Delta x\rightarrow 0}\frac{f(z+\Delta z)-f(z)}{\Delta z}=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}
+\end{align*}
+以虚轴的方式趋近于0：
+\begin{align*}
+	\lim_{i\Delta y\rightarrow 0}\frac{f(z+\Delta z)-f(z)}{i \Delta y}=\frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}
+\end{align*}
+由此联立可以得到C-R条件：
+\begin{align*}
+	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\qquad\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}
+\end{align*}
+\subsection{二维的拉普拉斯方程}
+解析函数的实部和虚部是相互正交的：
+\begin{align*}
+	\nabla u\cdot\nabla v=0
+\end{align*}
+只有满足二维的拉普拉斯方程才可以通过给定实部或虚部的其中一个求解另外一个：
+\begin{align*}
+	\Delta u=0,\qquad\Delta v=0
+\end{align*}
+\subsection{极坐标形式下的C-R条件的证明}
+\begin{equation*}
+	\begin{split}
+		\frac{\partial u}{\partial \rho}&=\frac{\partial u}{\partial x}\cdot \frac{\partial x}{\partial \rho}+\frac{\partial u}{\partial y}\cdot\frac{\partial y}{\partial \rho}\\&=\cos \varphi \cdot\frac{\partial u}{\partial x}+\frac{\partial u}{\partial y}\cdot \sin \varphi
+	\end{split}
+\end{equation*}
+\begin{equation*}
+	\begin{split}
+		\frac{\partial v}{\partial \varphi}&=\frac{\partial v}{\partial x}\cdot\frac{\partial x}{\partial \varphi}+ \frac{\partial v}{\partial y}\cdot \frac{\partial y}{\partial\varphi}\\&=\frac{\partial v}{\partial x}\cdot\rho(-\sin \varphi)+\rho\cos \varphi\cdot\frac{\partial v}{\partial y}
+	\end{split}
+\end{equation*}
+
+\subsection{柯西定理}
+单连通区域的柯西定理的推导：
+$$
+	\oint f(z)dz=0
+$$
+证明：
+\begin{align*}
+	\oint_c udx-vdy+i\oint_cudy+vdx=\iint(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y})dxdy+i\iint(\frac{\partial v}{\partial y}-\frac{\partial u}{\partial x})dxdy
+\end{align*}
+由柯西黎曼条件：$\frac{\partial u}{x}=\frac{\partial v}{\partial y}$,$\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}$
+代入得到：
+\begin{align*}
+	\oint_cf(z)dz=0
+\end{align*}
+\subsection{柯西积分公式}
+$$
+	f(a)=\frac{1}{2\pi i}\oint_{C}\frac{f(\xi)}{\xi-a}d\xi
+$$
+\subsection{对于留数理论的思考}
+我们这里所知道额留数是前面的柯西积分公式的出来的或者是前面的洛朗级数的出来的,对于柯西积分公式：
+\begin{align*}
+	f(a)=\frac{1}{2\pi i}\oint_{C}\frac{f(\xi)}{\xi-a}d\xi
+\end{align*}
+对其进行适当的变形得到
+\begin{align*}
+	\oint\frac{f(\xi)}{\xi-a}=2\pi i f(a)=\oint f(z)dz
+\end{align*}
+所以联立起来我们说一阶极点的系数就是留数，并且我们还可以由一阶极点的定义来推得其与洛朗级数展开的关系，
+其另外一种定义就是\textbf{洛朗级数展开的负一项}，所以求留数我们是可以转化成为求相应的一阶极点的情况，如果对应的是
+n阶极点的情况，我们可以对此进行相应的推导：
+\begin{gather}
+	f^{(n-1)}(a)=\frac{(n-1)!}{2\pi i}\oint \frac{f(z)}{(z-a)^n}dz\\
+	2\pi i f^{(n-1)}(a)=(n-1)!\oint \frac{f(z)}{(z-a)^n}dz
+\end{gather}
+根据公式1可以推得：
+\begin{align*}
+	resf(z)=\lim_{z\rightarrow a}(\xi-a)f(z) \\
+	resf(z)=\frac{1}{(n-1)!}\lim_{z\rightarrow a}(z-a)^n f(z)
+\end{align*}
+因此当复变函数的积分可以用留数理论来求，我们数理方法里面学的一些复变函数的理论都是自洽的可以相互推导的，并且归结起来
+，也还只是对于柯西黎曼条件的引申与推广。从最基本的理论推导出复变函数中常用的积分公式：
+\begin{align*}
+	\oint f(z)dz=2\pi i res f(z)
+\end{align*}
+这个公式统一了n阶导的柯西积分公式和一阶导时的柯西积分公式
+\subsection{利用留数理论计算实数积分}
+这里我们给出基本的三类，分别是\textbf{无穷积分，三角函数积分，利用坐标变换的来的三角函数的积分}
+其中第一类和第二类本质上是可以由欧拉公式来推得的：
+\textbf{无穷积分}：
+\begin{align*}
+	\int_{-\infty}^{+\infty}f(x)dx=2\pi i resf(a_k)+\pi if(b_k)
+\end{align*}
+其中$a_k$为上半平面的留数，$b_k$为实轴上的留数
+推导过程如下：
+\begin{gather*}
+	\oint f(z)=\int_{-\infty}^{+\infty}f(x)dx+\int_C f(z)dz
+\end{gather*}
+如果在实轴上也是存在孤立奇点的，我们构想一个在实数轴上围绕奇点形成一个极小的区域，所以我们这里考虑到复连通区域的柯西定理
+\begin{align*}
+	\oint f(z)dz=\oint_{l'}\sum f(z)dz+\lim_{c_r\rightarrow 0}f(z)dz
+\end{align*}
+这里的小圆弧引理可以得到：
+\begin{align*}
+	\lim_{c_r\rightarrow 0}\int_{c_r}f(z)dz=\pi i resf(b_k)
+\end{align*}
+其中$f(z)=\sum_{k=-\infty}^{\infty}(z-b)^k dz$,对于$k\neq -1$时，$f(z)=0$,因此，$k=-1$.
+这里我们构造出的
+\begin{align*}
+	\int_Cf(z)=0
+\end{align*}
+因此我们可以推得的无穷积分的公式：
+\begin{align*}
+	\oint f(z)dz=2\pi i resf(a_k)+\pi i resf(b_k)
+\end{align*}
+其实我们这里还需要注意一个初始条件的，否则无法用留数定理算无穷积分的
+\begin{align*}
+	\lim_{z_k\rightarrow \infty}zf(z)=0
+\end{align*}
+并且我们这里可以给出的$f(z)$是$\frac{1}{z}$的高阶无穷小！！！\\
+\textbf{三角函数的积分}
+这里的推导过程就是高数当中的积分变换，注意前面的引申到x轴上含有奇点的情况：\\
+$f(x)$是偶函数：
+\begin{align*}
+	\int_{0}^{\infty}f(x)\cos px dx=\pi i \sum res(e^{ipa_k}f(a_k))+\frac{\pi i}{2}\sum res(e^{ipb_k}f(b_k))
+\end{align*}
+$f(x)$是奇函数：
+\begin{align*}
+	\int_{0}^{\infty}f(x)\sin px=\pi \sum res(e^{ipa_k}f(a_k))+\frac{\pi}{2}\sum res(e^{ipb_k}f(b_k))
+\end{align*}
+\textbf{这里的坐标变换时的积分进行相应的变换就是可以的，但是这里的区别是对单位圆进行相应的坐标变换}，
+对于这里的对围道积分的推论：回归留数的定义：在对应的单位圆区域的留数之和，或者给定的相应的区域的留数之和。
+\subsection{物理当中的几类常见的积分}
+\section{数学物理方程}
+\subsection{三类基本的方程}
+\subsection{麦克斯韦组的积分形式到微分形式}
+先由电磁学中的内容给出麦克斯韦方程组的积分形式
+\begin{equation*}
+	\left\{
+	\begin{array}{lr}
+		\oiint D\cdot dS=q                                             & \\
+		\oiint H\cdot dS=0                                             & \\
+		\oint E\cdot dS=-\iint_S \frac{\partial B}{\partial t}\cdot dS & \\
+		\oint H\cdot dl=I+\iint_S \frac{\partial D}{\partial t}\cdot dS
+	\end{array}
+	\right.
+\end{equation*}
+我们这里需要用到高斯定理和斯托克斯定理就可以直接将麦克斯韦的积分形式推广到微分形式
+\begin{align*}
+	\oiint D\cdot dS=\iiint_\tau \nabla \cdot D d\tau=\iiint_{\tau}\rho d\tau
+\end{align*}
+因此对比右边两项的公式得到：
+\begin{align*}
+	\nabla\cdot D=\rho
+\end{align*}
+继续对这个方程进行求导得到泊松方程：$\Delta V=0$,类似的：$\nabla H=0$.\\
+我们继续使用斯托克斯公式：$\oint E dl=\iint \nabla \times E dS=-\iint \frac{\partial B}{\partial t}dS$,可以得到：$\nabla\times E=-\frac{\partial B}{\partial t}$,类似的：$\nabla \times H=J+\frac{\partial D}{\partial t}$。
+最终我们是可以得到Maxwell's equations
+\begin{equation*}
+	\left\{
+	\begin{array}{lr}
+		\nabla \times H=J+\frac{\partial D}{\partial t} \\
+		\nabla\times E=-\frac{\partial B}{\partial t}   \\
+		\nabla\cdot B=0                                 \\
+		\nabla\cdot D=\rho
+	\end{array}
+	\right.
+\end{equation*}
+\subsection{傅里叶级数}
+傅里叶级数的表达式：
+\begin{align*}
+	f(x)=a_0+\sum_{n=1}^{\infty}(a_n \cos nx +b_n\sin nx)
+\end{align*}
+傅里叶级数具体是怎么逼近于原函数的，由最开始的正余弦函数，慢慢的趋近于被傅里叶展开的
+原函数（这里面可以指f(x)）。
+\subsection{傅里叶变换}
+存在一种映射关系，$\mathcal{F}[f(x)]=G(\omega)$,这种映射关系跟函数的映射关系是不一样的，并且我们这里给出的逆映射就是$f(x)=\mathcal{F}^{-1}[G(\omega)]$,我们这里给出在线性代数中的一种说法：积分变换的核由公式给出：
+\begin{align*}
+	\mathcal{F}(\beta)=\int_a^b f(x)\kappa(\beta,x)dx
+\end{align*}
+其中$\kappa(\beta,x)$被称为积分变换的核，在线性代数中表示就是$Ax=b$\\
+规定满足狄利克雷条件的函数才能进行傅里叶展开：这里我们给出实数和复数通用的展开式：
+\begin{align*}
+	f(x)=\frac{1}{2l}\int_{-l}^{l}c_n e^{i\omega x}dx
+\end{align*}
+其中：$c_n=\int_{-l}^{l}f(\xi) e^{-i\omega \xi}d\xi$
+那么我们如果在周期为无穷的情况下时，我们可以根据此得到傅里叶积分，方便我们推出后面的傅里叶变换，这里我们对l求极限就可以了，当然这里确实时不够严谨的。
+\begin{align*}
+	f(x)=\lim_{l\rightarrow\infty}\frac{1}{2l}\int_{-l}^{l}\left[\int_{-l}^{l}f(\xi)e^{-i\omega \xi }d\xi\right]e^{i\omega x}dx
+\end{align*}
+\begin{gather*}
+	f(x)=\lim_{l\rightarrow\infty}\frac{1}{2\pi}\int_{-l}^{l}\left[\int_{-l}^{l}f(\xi)e^{-i\omega \xi }d\xi \right]e^{i\omega x}\Delta\omega=\lim_{l\rightarrow\infty}\frac{1}{2\pi}\int_{-l}^{l}\left[\int_{-l}^{l}f(\xi)e^{-i\omega \xi }d\xi \right]e^{i\omega x}d\omega
+\end{gather*}
+因此我们是可以得到傅里叶变换的：
+\begin{align*}
+	\int _{-\infty}^{+\infty}f(\xi)e^{-\omega \xi }d\xi=G(\omega)
+\end{align*}
+傅里叶逆变换的公式
+\begin{align*}
+	f(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty}G(\omega)e^{i\omega x}d\omega
+\end{align*}
+傅里叶变换的性质：
+对于延迟性质和位移性质，所谓的位移性质是体现在自变量上的位移，延迟性是体现在函数上的，所以我们这里给出几个性质：\\
+延迟性质：$\mathcal{F}\left[e^{i\omega x}f(x)\right]=G(\omega-\omega_0)$
+位移性质：$\mathcal{F}\left[f(x-x_0)\right]=e^{-i \omega x}\mathcal{F}\left[f(x)\right]=e^{i\omega x}G(x)$
+微分性质和积分性质：
+\begin{align*}
+	\mathcal{F}\left[\int_{x_0}^{x}f(x)dx\right]=\frac{1}{i\omega}\mathcal{F}[f(x)]
+\end{align*}
+\begin{align*}
+	\mathcal{F}\left[f^{(n)}(x)\right]=(i\omega)^{n}\mathcal{F}\left[f(x)\right]
+\end{align*}
+还可以参考文章\href{https://zhuanlan.zhihu.com/p/78775455}{htttps://zhuanlan.zhuhu.com/p/78775455}这里面讲了另外一种观点
+傅里叶变换法中的时域变为频域。\\
+三个常用的傅里叶变换公式：
+\begin{align*}
+	\mathcal{F}\left[e^{-\eta x^2}\right]=\sqrt{\frac{\pi}{\eta}}e^{-\frac{\omega^2}{4\eta}}
+\end{align*}
+\begin{equation*}
+	\mathcal{F}\left[\sin \eta x^2\right]=-\sqrt{\frac{\pi}{\eta}}\sin\left(\frac{\omega^2}{4\eta}-\frac{\pi}{4}\right),\qquad\qquad\mathcal{F}\left[\cos \eta x^2\right]=\sqrt{\frac{\eta }{\pi}}\cos\left(\frac{\omega^2}{4\eta}-\frac{\pi}{4}\right)
+\end{equation*}
+
+\section{Deferential Equation}
+\subsection{pde的时间坐标的变量分离}
+对空间的operator是S，对时间的operator是$\nabla_t$,T是分离变量后的时间
+部分，R是分离变量后的空间部分
+\begin{align*}
+	&S(TR)=TSR=\nabla_t(TR)=R\nabla_t T\\
+	&\frac{1}{R}SR=\frac{1}{T}\nabla_t T=\alpha\\
+	&(S-\alpha)R=0,(\nabla_t-\alpha)T=0
+\end{align*}
+这样pde就变换成了ode，拿薛定谔方程举个例子，schordinger方程的空间
+operator 就是Hamiltonian，时间operator为$i\hbar\nabla_t$，如果state
+可以分解成时间项和空间项，空间项满足的方程也就是我们所说的定态薛定谔方程，分离出的时间项
+为$e^{-iEt/\hbar}$。
+\subsection{级数解法}
+
+\end{document}

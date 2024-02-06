@@ -1,0 +1,47 @@
+\contentsline {section}{目录}{2}{section*.1}%
+\contentsline {section}{\numberline {1}量子力学引入}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}一些假设(postulates)}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}测量(measurement)}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}泊松括号和对易关系}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}薛定谔方程的引入}{2}{subsection.1.4}%
+\contentsline {section}{\numberline {2}一维定态问题}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}定态和束缚态的定义}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}自由粒子}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}势阱中的粒子}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}连续性方程}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}散射问题}{5}{subsection.2.5}%
+\contentsline {section}{\numberline {3}量子谐振子}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}X basis}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}E basis}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}从E basis到X basis}{6}{subsection.3.3}%
+\contentsline {section}{\numberline {4}多粒子系统}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}直积运算}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}两粒子态矢的演化}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}全同粒子}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}全同粒子态矢归一化}{8}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}可以忽略对称性与反对称性的情况}{8}{subsection.4.5}%
+\contentsline {section}{\numberline {5}对称性与守恒量}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}空间平移对称性}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}时间平移对称性}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}宇称}{10}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}时间反演对称性*}{11}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}旋转对称性}{11}{subsection.5.5}%
+\contentsline {section}{\numberline {6}自旋以及自旋耦合}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}自旋}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}自旋耦合}{13}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}自旋动力学}{14}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}进动问题}{15}{subsection.6.4}%
+\contentsline {section}{\numberline {7}The motion of charged particles in magnetic field}{15}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Fine Structure}{15}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Zeeman effect}{16}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}自旋相互作用随时间的演化}{16}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}正常塞曼效应}{16}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}反常塞曼效应}{17}{subsection.7.5}%
+\contentsline {section}{\numberline {8}角动量}{17}{section.8}%
+\contentsline {subsection}{\numberline {8.1}角动量耦合}{17}{subsection.8.1}%
+\contentsline {section}{\numberline {9}近似方法}{18}{section.9}%
+\contentsline {subsection}{\numberline {9.1}不含时非简并微扰理论}{18}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}简并微扰}{19}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Degenerate pertubation problem}{20}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Time dependent pertubation theorem}{20}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Calculus of variations}{21}{subsection.9.5}%

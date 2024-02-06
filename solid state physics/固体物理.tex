@@ -1,0 +1,287 @@
+\documentclass[UTF8]{article}
+\usepackage{ctex}
+\usepackage{anyfontsize}
+\usepackage{amsmath}
+\usepackage{bookmark}
+\hypersetup{hidelinks}
+\usepackage{geometry}
+\numberwithin{equation}{section}
+\geometry{a4paper,scale=0.8}
+% \usepackage{newpxmath}
+\usepackage{physics}
+
+\title{固体物理笔记}
+\author{lcg}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{晶体结构}
+正交晶系举例：简单立方，体心立方，面心立方，底心正交，如果采用钢球模型来描述的话，简单立方各个顶点的钢球是相切的，
+对于体心立方，对角线的钢球是相切的，对于，面心立方，面上的对角线是相切的。
+\subsection{晶格的周期性}
+晶格的周期性：晶格的周期性可以使用原胞和基矢来描述，原胞指的是晶格
+中的最小重复单元，基矢指的是原胞的边矢量。
+
+原胞的体积：$\va{a}_1\dot(\va{a}_2\times\va{a}_3)$
+
+基矢的选取原则：选取一个点作为原点，然后选三个最近邻的点引三条矢量就是
+对应的坐标基矢。
+简单立方的基矢：$\va{a}_1=a\va{i},\va{a}_2=a\va{j},\va{a}_3=a\va{k}$
+，面心立方基矢：$\va{a}_1=\frac{a}{2}(\va{i}+\va{k}),\va{a}_2=
+    \frac{a}{2}(\va{k}+\va{j}),\va{a}_3=\frac{a}{2}(\va{i}+\va{j})$,
+体心立方基矢：$\va{a}_1=\frac{a}{2}(\va{-i}+\va{-j}+\va{k}),\va{a}_2=\frac{a}{2}(\va{i}-\va{j}+\va{k}),
+    \va{a}_3=\frac{a}{2}(\va{i}+\va{j}+\va{k})$。
+
+计算体积直接使用矢量积的行列式形式就可以了：(以体心立方为例子)
+\begin{align*}
+    V=(\frac{a}{2})^3\left|\begin{array}{ccc}
+                               -1 & -1 & 1 \\
+                               1  & -1 & 1 \\
+                               1  & 1  & 1
+                           \end{array}\right|
+\end{align*}
+复式晶格：复式晶格包含两种或者两种以上的等价原子，复式晶格由他们的子晶格相重叠而成，复式晶格的原胞就是相应子晶格的原胞。
+
+
+还有另外一种方式来描述晶体的周期性结构：布拉伐格子
+\begin{align*}
+    \va{R}=\va{r}+l_1\va{a}_1+l_2\va{a}_2+l_3\va{a}_3
+\end{align*}
+\subsection{晶向，晶面与他们的标志}
+晶向：布拉伐格子分布在一系列的直线系上，这些直线系被称为晶列，这些晶列
+的方向被称为晶向，如果一个原子到另外一个原子的唯一矢量表示为：$l_1\va{a}_1+l_2\va{a}_2+l_3\va{a}_3$,
+则其晶向指数为：$[l_1l_2l_3]$。
+
+我们通过米勒指数来标注晶面，选择一个格点作为原点延三个基矢方向的线段，晶面将其几等分，对应的等分数就是米勒指数，即截距的倒数化为整数：
+$(h_1h_2h_3)$
+
+\subsection{倒格子}
+倒格子是正格子通过傅里叶变换得到的，变换之前是坐标空间，变换之后是动量空间。倒格子与正格子之间的坐标基矢变换：
+\begin{align*}
+     & \va{b}_1=2\pi \frac{\va{a}_2\times \va{a}_3}{\va{a}_1\cdot [\va{a}_2\times\va{a}_3]} \\
+     & \va{b}_2=2\pi \frac{\va{a}_3\times \va{a}_1}{\va{a}_2\cdot [\va{a}_3\times\va{a}_1]} \\
+     & \va{b}_3=2\pi \frac{\va{a}_1\times \va{a}_2}{\va{a}_3\cdot [\va{a}_1\times\va{a}_2]}
+\end{align*}
+因此可以得到一个非常重要的关系:$\va{b}_i\cdot \va{a}_j=2\pi \delta_{ij}$。
+以及衍生出以下性质：
+\begin{itemize}
+    \item 倒格子的倒格子是原来的正格子
+    \item 正格子的原胞体积反比于倒格子的原胞体积
+    \item 正格矢与倒格矢满足关系$\va{R}_l\cdot\va{G}_h=2\pi u,u=0,\pm 1,\cdots$
+    \item 正格子的一组晶面$(h_1h_2h_3)$与$G_{h_1h_2h_3}$正交
+    \item 倒格子的模$|\va{G_{h_1h_2h_3}}|$反比于晶面族$(h_1h_2h_3)$的面间距
+\end{itemize}
+晶面方程的推导：
+\begin{align*}
+     & \va{x}=\xi_1\va{a}_1+\xi_2\va{a}_2+\xi_3\va{a}_3                \\
+     & \va{G}_{h_1h_2h_3}=h_1\va{b}_1+h_2\va{b}_2+h_3\va{b}_3          \\
+     & \va{x}\cdot\va{G}_{h_1h_2h_3}=2\pi (\xi_1h_1+\xi_2h_2+\xi_3h_3)
+    =2\pi n
+\end{align*}
+n取不同整数代表晶面系中不同的晶面。并且由上式可以推导出晶面间距：
+\begin{align*}
+     & d = \frac{2\pi}{|h_1\vec{b}_1+h_2\vec{b}_2+h_3\vec{b}_3|}
+\end{align*}
+\subsection{维格纳塞茨原胞和布里渊区}
+选取某一点为中心，作其最近邻的所有格点的中垂面，这些平面所包围的
+空间就是维格纳塞茨原胞原胞。
+倒格子中的维格纳塞茨原胞原被称为第一布里渊区，以此类推，第一布里渊区界面与次近邻与原点的垂直平分面
+之间的区域成为第二布里渊区。。。
+\subsection{晶体的宏观对称性}
+考虑到晶面上的所有布拉伐格点均可表示为：$l_1\va{\alpha}_1+l_2\va{\alpha}_2$.
+因此$A'B'=nAB\Rightarrow 1-2\cos \theta = n \in [-1,3]$,因此根据n重轴
+的定义，n只能取1，2，3，4，6，n重轴定义：$\frac{2\pi}{n}$。
+
+根据晶体点群，将晶体分为7中晶系和14种布拉伐格子。
+
+在具有立方对称的晶体中，介电常数可以看成标量。\\
+证1：
+介电常数：
+\begin{align*}
+    \left(\begin{array}{c}
+              D_x \\D_y\\D_z
+          \end{array}\right)=
+    \left(\begin{array}{ccc}
+              \varepsilon_{xx} & \varepsilon_{xy} & \varepsilon_{xz} \\
+              \varepsilon_{yx} & \varepsilon_{yy} & \varepsilon_{yz} \\
+              \varepsilon_{zx} & \varepsilon_{zy} & \varepsilon_{zz}
+          \end{array}
+    \right)
+    \left(\begin{array}{c}
+              E_x \\E_y \\E_z
+          \end{array}\right)
+\end{align*}
+选取z轴为电场方向并以此为旋转轴顺时针旋转$\frac{\pi}{2}$
+旋转之前：
+\begin{align*}
+     & D_x=\varepsilon_{xz}E_z \\
+     & D_y=\varepsilon_{yz}E_z \\
+     & D_z=\varepsilon_{zz}E_z
+\end{align*}
+旋转之后：
+\begin{align*}
+     & D_x'=-D_y \\
+     & D_y'=D_x  \\
+     & D_z=D_z
+\end{align*}
+可以推得：$\varepsilon_{xz}=\varepsilon_{yz}=0$，同理绕x，y轴分别
+旋转90度，得到：$\varepsilon_{yz}=\varepsilon_{zx}=0,\varepsilon_{xy}=\varepsilon_{zy}=0$.
+最后绕[111]方向旋转$\frac{2\pi}{3}$，得到：$\varepsilon_{xx}=\varepsilon_{yy}=\varepsilon_{zz}=\varepsilon_0$。
+
+正交变换：
+
+\newpage
+\section{固体结合}
+原子的相互作用力：库伦吸引力（长程力）和排斥力（排斥力）,其中库伦吸引力
+是库伦相互作用，大小正比于$1/r^2$。排斥力是由于泡利不相容原理导致的电子
+云之间的强烈排斥作用。当两个力的大小是相等时，处于平衡状态。
+\subsection{离子性结合}
+以正离子为坐标原点，该正离子和其他所有的离子的库仑作用力的大小为：
+\begin{align*}
+    F = \sum_{n_1,n_2,n_3}\frac{(-1)^{n_1+n_2+n_3}q^2}{4\pi \varepsilon_0(n_1^2r^2+n_2^2r^2+n_3^2r^2)}
+\end{align*}
+则一个离子的平均库伦能
+\begin{align*}
+    U_1 = \frac{1}{2} \sum_{n_1,n_2,n_3}\frac{(-1)^{n_1+n_2+n_3}q^2}{4\pi \varepsilon_0(n_1^2r^2+n_2^2r^2+n_3^2r^2)^{1/2}}
+\end{align*}
+一个原胞中有两个离子，因此一个原胞的库伦能是$2U_1$
+其中：
+\begin{align*}
+    \alpha =- \sum_{n_1,n_2,n_3}\frac{(-1)^{n_1+n_2+n_3}}{(n_1^2r^2+n_2^2r^2+n_3^2r^2)^{1/2}}
+\end{align*}
+$\alpha$被称为马德隆常数。
+
+由于电子是费米子满足泡利不相容原理，因此当在两个离子之间也会出现排斥能。这里的
+排斥能可以使用势能来表示,两个离子之间的势能为：$\frac{b}{r^n}$，
+因此在一个原胞内一对离子的平均排斥能是：$2\times\frac{1}{2}\times 6
+    \times \frac{b}{r^n}$。
+
+设晶体有N个原胞，系统的内能为：
+\begin{align*}
+    U = N(-\frac{A}{r}+\frac{B}{r^n})
+\end{align*}
+当$\frac{d U}{dr}=0$时，晶体最稳定，此时$r=r_0$为平衡时的近邻距离
+，由热力学可以知道$p = -\frac{dU}{dV}$，其中N个原胞的体积：$V=2Nr^3$,
+由于一般情况下，晶体一般受到的时大气压$p_0$，大气压对固体的影响很小。
+\begin{align*}
+    -\frac{dU}{d(2Nr^3)}=p_0\approx 0\Rightarrow \frac{d U}{dr}=0
+\end{align*}
+当晶体处于大气压数量级的压强下，r取极值$r_0$。此时$U_{r=r_0}=-W_0$。
+
+体变模量定义为:
+\begin{align*}
+    K=\frac{dp}{-dV/V}=-V\frac{dp}{dV}=V\frac{d(dU/dV)}{dV}=V\frac{d^2U}{dV^2}|_{V=V_0=2Nr_0^3}
+\end{align*}
+
+\subsection{共价结合}
+因为电子属于全同粒子，满足对称性，构造出波函数的基本形式，然后使用变分法
+求出能量本征值。得到成键态上填充两个自旋相反的电子使得能量下降，而反键态能量升高。
+未配对的电子在配对时需要使得能量最低而形成的键叫做共价键。
+
+共价键的基本特性：饱和性和方向性。
+饱和性：由于共价键只能由未配对的价电子形成，当价电子壳层等于半满或者超过半满时，有8-N个电子是未配对的，方向性：
+共价键的强弱决定于两个电子轨道的交叠程度。一个原子在价电子波函数最大
+的方向形成共价键。
+
+C原子为什么会形成四个共价键？
+发生了$sp^3$轨道杂化，原本C原子的基态电子排布：$1s^22s^23p^2$,发生
+轨道杂化电子排布：$1s^22s3p^3$，这样就有四个未配对的电子，可以形成
+四个共价键。
+\subsection{金属性结合}
+金属性结合的基本特点是在结合成晶体时，原来的价电子不在束缚在原子上，转变
+在整个晶体内的运动。还有金属性结合是一种体积效应，因为原子越紧凑，库伦
+能越低。
+\subsection{范德瓦尔斯结合}
+范德瓦尔斯结合：两个中性分子之间存在着分子力。
+极性分子：正负电荷中心重合，非极性分子：正负电荷中心不重合形成电偶极子
+
+极性分子的结合能：考虑两个平行偶极子的相互作用，两个电偶极子的正电荷之间的
+距离为r，第一个电偶极子之间的距离为$l_1$,第二个电偶极子的距离为$l_2$,两个电偶极子之间的作用力是库仑力，
+可以得到两个电偶极子之间的库伦能大小为：
+\begin{align*}
+    U = \frac{1}{4\pi \varepsilon_0}(\frac{q^2}{r}+\frac{q^2}{r+l_2-l_1}-\frac{q^2}{r+l_2}-\frac{q^2}{r-l_1})
+\end{align*}
+因为$l_2-l_1<<r$,对每一项按照泰勒展开到二阶项：
+\begin{align*}
+    \frac{1}{1+x}=1-x+x^2
+\end{align*}
+带入电偶极矩：$p_1=ql_1,p_2=ql_2$,可以得出库伦能为：
+\begin{align*}
+    u(r)=-2\frac{l_1l_2}{r^2}=-\frac{p_1p_2}{2\pi \varepsilon r^3}
+\end{align*}
+
+极性分子与非极性分子的结合：是由于极性分子偶极矩电场的作用下，非极性分子的电子云的中心与核电荷不在重合，导致非极性分子的极化，
+产生诱导磁矩。
+对于其中的一个极性分子：
+\begin{align*}
+    E & = \frac{1}{4\pi \varepsilon_0}(\frac{q}{r^2}-\frac{q}{(r-l_1)^2} ) \\
+      & = \frac{2p_1}{4\pi \varepsilon  _0 r^3 }
+\end{align*}
+感生偶极矩为：$p_2=\alpha  E$,则对应的能量为：
+\begin{align*}
+    U(r)=\frac{-\alpha p_1^2}{2\pi^2 \varepsilon_0^2r^6}
+\end{align*}
+
+非极性分子的结合：依靠瞬时偶极矩的相互作用结合而成的，其作用力非常微弱。
+第一个原子的瞬时偶极矩$p_1$在r处产生的电场$E\propto p_1/r^3$,第二个原子在电场作用下的感生偶极矩为$p_2=\alpha E$
+类比得到库伦能得到两个电偶极子之间的相互作用能为：
+\begin{align*}
+    U = \frac{p_1p_2}{r^3}=\frac{\alpha p_1^2}{r^6}
+\end{align*}
+考虑到分子之间还需存在一定的斥力才能达到稳定平衡状态，故相互作用能：
+\begin{align*}
+    U(r)=-\frac{A}{r^6}+\frac{B}{r^{12}}
+\end{align*}
+定义勒纳-琼斯势：
+\begin{align*}
+    U(r)=4\varepsilon[-(\frac{\sigma}{r})^6+(\frac{\sigma}{r})^{12}]
+\end{align*}
+这个只是两个原子的相互作用能，在整个晶体当中，能量为所有两个原子的
+相互作用能求和：
+\begin{align*}
+    U(r) = \frac{1}{2}\sum_i^{N}\sum_j^{N}4\varepsilon[-(\frac{\sigma}{r_{ij}})^6+(\frac{\sigma}{r_{ij}})^{12}]
+\end{align*}
+可以得到晶体的总的势能;
+\begin{align*}
+    U(r) = \frac{N}{2}4\varepsilon[-A_6(\frac{\sigma}{r})^6+A_{12}(\frac{\sigma}{r})^{12}]
+\end{align*}
+可以根据上式求得晶格常数，结合能以及体变模量。
+
+\newpage
+\section{能带理论}
+\subsection{布洛赫定理的证明}
+首先指出布洛赫定理的内容：当势场具有晶格周期性的时候，波动方程的解具有如下形式：
+\begin{align*}
+    \psi(r+R_n)=e^{ikR_n}\psi(R)
+\end{align*}
+引入平移算符$T$,则对任意函数$f(r)$做平移操作：
+\begin{align*}
+    T_\alpha f(r)=f(r+\alpha_\alpha)
+\end{align*}
+接下来证明哈密顿量和平移算符是对易的：
+\begin{align*}
+    \begin{aligned}
+        T_{a} H f(\boldsymbol{r}) & =\left[-\frac{h^{2}}{2 m}
+            \nabla_{r+a}^{2}+V\left(\boldsymbol{r}+\boldsymbol{\alpha}_{a}\right)\right]
+        f\left(\boldsymbol{r}+\boldsymbol{\alpha}_{\alpha}\right)                                  \\
+                                  & =\left[-\frac{\hbar^{2}}{2 m} \nabla_{r}^{2}+V(\boldsymbol{r})
+            \right] f\left(\boldsymbol{r}+\boldsymbol{\alpha}_{a}\right)
+        \\& =H T_{a} f(\boldsymbol{r})
+    \end{aligned}
+\end{align*}
+
+\subsection{一维势场运动的近自由电子近似}
+这类问题可以
+\subsection{能态密度和费米面}
+能态密度定义：
+\begin{align*}
+    N(E)=\frac{\Delta N}{\Delta E}=\frac{V}{(2\pi)^3}\iiint dSdq=\frac{V}{(2\pi)^3}\iiint \frac{dS}{\nabla_k E(k)}
+\end{align*}
+在近自由电子近似当中，由于开始
+费米面：所有能量小于$\varepsilon_F$的电子的数目总和为N，可以根据此定义来定义费米速度，动量，能量等物理量。
+
+\end{document}
+
+
+

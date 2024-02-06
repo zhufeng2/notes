@@ -1,0 +1,190 @@
+\documentclass[UTF8]{article}
+\usepackage{ctex}
+\usepackage{anyfontsize}
+\usepackage{bookmark}
+\usepackage{tikz}
+\hypersetup{hidelinks}
+\usepackage{tocbibind}
+\usepackage{geometry}
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\usepackage{mathrsfs}
+% \usepackage{newpxmath}
+\usepackage{physics}
+\usepackage{caption2}
+\geometry{a4paper,scale=0.8}
+
+\title{}
+\author{李承高}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+{\centering\section{2004量子力学试题}}
+\noindent
+1. 设粒子的波函数
+\begin{align*}
+    \phi(x)=Ae^{-\frac{m\omega}{2\hbar}x^2}
+\end{align*}
+(1)证明归一化常数\\
+(2)证明该波函数是谐振子的零级波函数\\
+(3)求坐标，动量，能量平均值\\[10pt]
+2.证明：若$\lambda$是力学量算符$\hat{F}$的一个本征值，则$\lambda^2$为力学量
+算符$\hat{F}^2$的本征值。\\[10pt]
+3.证明在角动量$\hat{L_z}$的本征态下，角动量$\hat{L_x}$和$\hat{L_y}$的
+平均值为0.\\[10pt]
+4.设$\hat{N},\hat{A}\hat{B}-\hat{B}\hat{A}=I,\hat{N}\phi=n\phi$，证明$\mu=\hat{A}\phi,
+\nu=\hat{B}\phi$是$\hat{N}$的本征矢。\\[10pt]
+5.利用测不准关系估算谐振子基态能量。\\[10pt]
+6.证明：\\
+(1)$\hat{P_x}=\frac{im}{\hbar}[\hat{H},\hat{X}]$。\\
+(2)在具有分立的能量本征态中的定态中，动量的平均值为$\overline{P_x}=0$。\\[10pt]
+7.一质量为m，电荷为q的粒子在电场$\varepsilon$中运动：
+\begin{align*}
+    V(x)=-q\varepsilon x
+\end{align*}
+试证明动量-能量测不准关系$\Delta P_x\Delta E\geq \frac{1}{2}\hbar |q|\varepsilon$。\\[10pt]
+8.均匀磁场$B=B\overrightarrow{i}$,有一定域电子，其哈密顿量为：
+\begin{align*}
+    H=\hbar \frac{eB}{2\mu}\sigma_x=\hbar \omega \sigma_x
+\end{align*}
+设$t=0$时，电子自旋$S_z=\frac{\hbar}{2}$,求t时刻电子自旋$\hat{S}$的平均值。\\[10pt]
+9.设非简谐振子的H表示为$H=H_0+H'$
+\begin{align*}
+    &H_0=\frac{P^2}{2m}+\frac{1}{2}m\omega^2 x^2\\
+    &H'=\beta x
+\end{align*}
+用微扰论求其能量本征值（准确到二级近似）（提示：谐振子波函数的递推关系：\\
+$x\psi_n(x)=\sqrt{\frac{\hbar}{m\omega}}(\sqrt{\frac{n}{2}}\psi_{n-1}(x)+\sqrt{\frac{n+1}{2}\psi_{n+1}(x)}$)\\[10pt]
+10. 质量为m的粒子在一维无限深势井：
+\begin{align*}
+    V(x)=
+    \begin{cases}
+        &0\qquad 0<x<a\\
+        &\infty\qquad x\leq a,x\geq a
+    \end{cases}
+\end{align*}
+中运动，其波函数是$\psi(x)=Ax(x-a)$，求测量能量的可能值，以及测值概率。
+\newpage
+{\centering\section{2005量子力学试题}}
+\noindent
+1.判断下列描述状态是否为定态
+\begin{flalign*}
+    &(1)\psi(x)=\mu(x)e^{iE_1 t/\hbar}+\mu(x)e^{-iE_2 t\hbar}&\\
+    &(2)\psi(x)=2\mu(x)e^{-iEt/\hbar}&
+\end{flalign*}
+2.设粒子处于二维无限深势井中，求粒子的能量本征值和本征波函数。\\[10pt]
+3.利用谐振子波函数的递推关系求在$\psi_n$态下的坐标，动量，能量的平均值及
+相应误差。\\[10pt]
+4. 一质量 ，电荷量为q的粒子在垂直均匀磁场B的平面内运动，其能级为$E_n=(n+\frac{1}{2})\frac{\hbar |q| B}{m}$,
+若粒子从$n=3$的激发态跃迁到基态，辐射电磁波，试求电磁波的频率。\\[10pt]
+5.在波函数$\psi(x)=\mu(x)e^{iP_0 x/\hbar}$中，若$\mu(x)$是实函数，证明$\overline{P_x}=P_0$。\\[10pt]
+6.证明分立的能量本征态下的动量平均值为0。\\[10pt]
+7.不考虑自旋，取朗道规范，带电粒子在垂直于均匀磁场$\overrightarrow{B}=B\overrightarrow{k}$的平面
+平面内运动的哈密顿量为：
+\begin{align*}
+    H=\frac{1}{2\mu}(p_x^2+(p_y-qBx)^2)
+\end{align*}
+若取力学量完全集${H,p_x}$，则它们的共同本征函数可以写为$\Psi(x,y)=\phi(x)e^{ip_y y/\hbar}$，
+试确定体系的能级。\\[10pt]
+8. 在自旋角动量$S_z$的本征态下，求自旋角动量$S_x,S_y$的平均值\\[10pt]
+9.设非简谐振子的H表示为$H=H_0+H'$
+\begin{align*}
+    &H_0=\frac{P^2}{2m}+\frac{1}{2}m\omega^2 x^2\\
+    &H'=\beta x
+\end{align*}
+用微扰论求其能量本征值（准确到二级近似）（提示：谐振子波函数的递推关系：\\
+$x\psi_n(x)=\sqrt{\frac{\hbar}{m\omega}}(\sqrt{\frac{n}{2}}\psi_{n-1}(x)+\sqrt{\frac{n+1}{2}\psi_{n+1}(x)}$)\\[10pt]
+10.费米子体系的产生湮灭算符用$a,a^\dagger$来表示，他们满足关系$aa^\dagger+a^\dagger a=1,a^2=0,(a^\dagger)^2=0$,
+以$n=a^\dagger a$表示单粒子态上的粒子数算符，计算$[n,a^\dagger],[n,a]$。
+\newpage
+{\centering\section{2006量子力学试题}}
+\noindent
+1.判断下列描述状态是否为定态
+\begin{flalign*}
+    &(1)\psi(x)=\sqrt{\frac{2}{L}}\sin \frac{\pi x}{L}e^{iE_1 t/\hbar}+\mu(x)e^{-iE_2 t\hbar}&\\
+    &(2)\psi(x)=\sqrt{\frac{2}{L}}\sin \frac{\pi x}{L}e^{-iEt/\hbar}&
+\end{flalign*}
+2.质量为m的粒子在一维无限深势井：
+\begin{align*}
+    V(x)=
+    \begin{cases}
+        &0\qquad 0<x<a\\
+        &\infty\qquad x\leq a,x\geq a
+    \end{cases}
+\end{align*}
+中运动，其波函数是$\psi(x)=Ax(x-a)$，\\
+(1)求归一化常数A\\
+(2)求坐标动量能量的平均值\\
+(3)求测量能量的可能值，以及测值概率。\\
+(4)证明：若$\lambda$是力学量算符$\hat{F}$的一个本征值，则$\lambda^2$为力学量
+(5)一粒子的运动能级$E_n=-\frac{\alpha}{n^2}$,若粒子从$n=3$的激发态跃迁到基态，
+辐射电磁波，则电磁波的频率和波长分别为多少。\\[10pt]
+3.证明：\\
+(1)$\hat{P_x}=\frac{im}{\hbar}[\hat{H},\hat{X}]$。\\
+(2)在具有分立的能量本征态中的定态中，动量的平均值为$\overline{P_x}=0$。\\[10pt]
+4.设$\hat{N},\hat{A}\hat{B}-\hat{B}\hat{A}=I,\hat{N}\phi=n\phi$，证明$\mu=\hat{A}\phi,
+\nu=\hat{B}\phi$是$\hat{N}$的本征矢。\\[10pt]
+5.质量为m的粒子在势场：
+\begin{align*}
+    V(x,y,x)=\frac{1}{2}m\omega^2(x^2+y^2+z^2)
+\end{align*}
+中运动。求粒子的能量本征值。\\[10pt]
+6.若S是电子的自旋角动量算符，试证明：
+\begin{align*}
+    S_xS_zS_xS_yS_x=i(\frac{\hbar}{2})^5
+\end{align*}
+7.分别取坐标表象和动量表象，求$p_x+\alpha x$的本征函数。\\[10pt]
+8.一质量为m的的粒子在势场：
+\begin{align*}
+    V(x)=-\alpha x
+\end{align*}
+中运动，求动量-能量的测不准关系。\\[10pt]
+9.设非简谐振子的H表示为$H=H_0+H'$
+\begin{align*}
+    &H_0=\frac{P^2}{2m}+\frac{1}{2}m\omega^2 x^2\\
+    &H'=\beta x
+\end{align*}
+用微扰论求其能量本征值（准确到二级近似）（提示：谐振子波函数的递推关系：\\
+$x\psi_n(x)=\sqrt{\frac{\hbar}{m\omega}}(\sqrt{\frac{n}{2}}\psi_{n-1}(x)+\sqrt{\frac{n+1}{2}\psi_{n+1}(x)}$)
+\newpage
+{\centering\section{2008量子力学试题}}
+\noindent
+1.填空：\\
+(1)若力学量$\hat{F}$的本征值为$\lambda$，则力学量$\hat{F}^2$的本征值为$\underline{\hbox to 20mm{}}$。\\
+(2)在角动量$L_z$的本征态下，角动量$L_x,L_y$的平均值分别为$\underline{\hbox to 20mm{}},\underline{\hbox to 20mm{}}$。\\
+(3)在具有分立的能量本征值的定态中给，动量平均值为$\underline{\hbox to 20mm{}}$。\\
+(4)一质量 ，电荷量为q的粒子在垂直均匀磁场B的平面内运动，其能级为$E_n=(n+\frac{1}{2})\frac{\hbar |q| B}{m}$,
+若粒子从$n=3$的激发态跃迁到基态，辐射电磁波，电磁波的频率为$\underline{\hbox to 20mm{}}$，波长为$\underline{\hbox to 20mm{}}$。\\
+(5)考虑一维束缚粒子，则$\frac{d}{dt}\int \Phi^*(x,t)\Phi(x,t)dx=\underline{\hbox to 20mm{}}$。\\
+(6)若$S$是电子的自旋角动量算符，则$S_xS_zS_xS_yS_x=\underline{\hbox to 20mm{}}$。\\
+(7)一质量为m，电荷为q的粒子在电场$\varepsilon$中运动，则$[P_x,H]=\underline{\hbox to 20mm{}}$，动量-能量不确定性原理为$\underline{\hbox to 20mm{}}$。\\[10pt]
+2.利用谐振子波函数的递推关系：
+\begin{align*}
+    \begin{aligned}
+    &x \varphi_n(x)=\sqrt{\frac{\hbar}{m \omega}}\left[\sqrt{\frac{n}{2}} \varphi_{n-1}(x)+\sqrt{\frac{n+1}{2}} \varphi_{n+1}(x)\right] \\
+    &x^2 \varphi_n(x)=\frac{\hbar}{2 m \omega}\left[\sqrt{n(n-1)} \varphi_{n-2}(x)+(2 n+1) \varphi_n(x)+\sqrt{(n+1)(n+2)} \varphi_{n+2}(x)\right. \\
+    &\frac{d}{d x} \varphi_n(x)=\sqrt{\frac{m \omega}{\hbar}}\left[\sqrt{\frac{n}{2}} \varphi_{n-1}-\sqrt{\frac{n+1}{2}} \varphi_{n+1}\right]
+    \end{aligned}
+\end{align*}
+(1)在$\psi_n$态下的坐标，能量，动量的平均值和误差。\\
+(2)设非简谐振子的H表示为$H=H_0+H'$
+\begin{align*}
+    &H_0=\frac{P^2}{2m}+\frac{1}{2}m\omega^2 x^2\\
+    &H'=\beta x
+\end{align*}
+用微扰论求其能量本征值（准确到二级近似）。\\[10pt]
+3.质量为m的粒子在三维无限深势井中：
+\begin{align*}
+    V(x,y,z)=\begin{cases}
+        &0,\qquad 0<x<a,0<y<b,0<z<c\\
+        &\infty
+    \end{cases}
+\end{align*}
+
+\end{document}

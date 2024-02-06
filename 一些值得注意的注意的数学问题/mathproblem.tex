@@ -1,0 +1,164 @@
+\documentclass[UTF8]{article}
+\usepackage{ctex}
+\usepackage{anyfontsize}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{tcolorbox}
+\usepackage{ctex}
+\usepackage{tikz}
+\usepackage{bookmark}
+\usepackage[a4paper, top=2cm, bottom=2cm,right=2cm, left=2cm]{geometry}
+\usepackage{esint}
+\usepackage{booktabs}
+% \usepackage{newtxmath}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % 清空当前设置的页眉和页脚
+\lhead{\leftmark} % 设置左边的页眉内容为当前子章节标题
+\chead{} % 中间留空
+\rhead{\thepage} % 设置右边的页眉内容为页码
+
+
+
+\title{Some math problem}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\section{微积分}
+\subsection{多元函数}
+\noindent 下面给出$f(x,y)$在$(a,b)$处的泰勒展开：
+\begin{align*}
+    f(x,y) = & f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)+ \\&\frac{1}{2!}(f_{xx}(a,b)(x-a)^2+f_{xy}(a,b)(x-a)(y-b)\\&+f_{yy}(a,b)(y-b)+\cdots)
+\end{align*}
+接下来是关于隐函数求导的内容，这个非常容易出错：
+例如，给出如下方程：
+\begin{align*}
+    \begin{cases}
+        x = r\cos \theta \\
+        y=r \sin \theta
+    \end{cases}
+    \Rightarrow
+    \theta = \arctan \frac{y}{x}
+\end{align*}
+分析$\frac{\partial x}{\partial \theta}$和$\frac{\partial \theta}{\partial x}$两者是否互为倒数，以前我的第一印象会告诉我这两个互为倒数，但是，根据偏导理论：
+\begin{align*}
+    \frac{\partial x}{\partial \theta}\mid_r=-y\quad\frac{\partial \theta}{\partial x}|_y =\frac{-y}{r^2}
+\end{align*}
+可以看到两者并不是倒数的关系，**因为求导时，视为常数的变量不一致**，要想使其成为导数，则将视为常数的变量变为一致，这里，改变第一个公式：
+$$
+    x = y\cot \theta \Rightarrow \frac{\partial x}{\partial \theta}|_y = \frac{-y}{\sin^2 \theta}
+$$
+可以看到：
+$$\frac{\partial x}{\partial \theta }\mid_ y \cdot \frac{\partial \theta }{\partial x}\mid _y = 1 $$
+在进行坐标变换时，
+\begin{align*}
+    \begin{cases}
+        dx = \frac{\partial x}{\partial r}\mid _\theta  dr-\frac{\partial x}{\partial \theta }\mid _r   d\theta \\
+        dy =\frac{\partial y}{\partial r}\mid _\theta  dr-\frac{\partial y}{\partial \theta }\mid _r   d\theta
+    \end{cases}
+    \Rightarrow
+    \begin{bmatrix}
+        dx \\dy
+    \end{bmatrix}=A
+    \begin{bmatrix}
+        dr \\d\theta
+    \end{bmatrix}
+    =\begin{bmatrix}
+         \frac{\partial x}{\partial r} \mid_\theta & \frac{\partial x}{\partial \theta }\mid _r \\
+         \frac{\partial y}{\partial r} \mid_\theta & \frac{\partial y}{\partial \theta }\mid _r
+     \end{bmatrix}
+    \begin{bmatrix}
+        dr \\d\theta
+    \end{bmatrix}
+\end{align*}
+相应的坐标逆变换为：
+\begin{align*}
+    \begin{bmatrix}
+        dr \\d\theta
+    \end{bmatrix}=A^{-1}
+    \begin{bmatrix}
+        dx \\dy
+    \end{bmatrix}
+    =\begin{bmatrix}
+         \frac{\partial r}{\partial x} \mid_y       & \frac{\partial r}{\partial y }\mid _x       \\
+         \frac{\partial \theta }{\partial x} \mid_y & \frac{\partial \theta }{\partial y }\mid _x
+     \end{bmatrix}
+    \begin{bmatrix}
+        dx \\dy
+    \end{bmatrix}
+\end{align*}
+变换矩阵$A$和$A^{-1}$的对应矩阵元并不是互为倒数，但是$AA^{-1}=1$
+\subsection{莱布尼兹求导法}
+二项式展开公式(以9次为例，n次类似)：$(a+b)^9=C_9^0 a^0b^9+C_9^1a^1b^8+\cdots+C_9^9 a^9b^0$,
+由此受到启发，对于$(ab)^{(9)}=C_9^0 a^{(0)}b^{(9)}+C_9^1a^{(1)}b^{(8)}+\cdots+C_9^9 a^{(9)}b^{(0)}$,以
+$(x\sin x)^{(9)}$为例：
+\begin{align*}
+    (x\sin x)^{(9)} &=x^{(0)}(\sin x)^{(9)}+C_9^1 x^{(1)}(\sin x)^{(8)}+\cdots\quad( x^{(s)}=0,s\geq 2)\\
+    &= 9\cos x+9\sin x
+\end{align*}
+\subsection{递推关系求积分}
+\begin{align*}
+    \int x^n \cos x d x=\int x^n d \sin x & =x^n \sin x-n \int x^{n-1} \cdot \sin x d x \\
+    & =x^n \sin x+n \int x^{n-1} d \cos x \\
+    & =x^n \sin x+n x^{n-1} \cos x-n(n-1) \int x^{n-2} \cdot \cos x d x
+\end{align*}
+则 $I_n=x^n \sin x+n x^{n-1} \cos x-n(n-1) I_{n-2}$ (一般情况我只需要续得这个就行),然后可以根据递推关系式
+求解$I_n$。
+\newpage
+\section{微分方程}
+\subsection{齐次N阶线性微分方程(HNOLDE)}
+\noindent  基本形式：
+\begin{gather*}
+    L[y] = y^{(n)} +a_{n-1}y^{(n-1)}+\cdots a_1y'+a_0 =0 \\
+    \intertext{代入$y = e^{\lambda x}$得：}
+    \lambda^n+a_n\lambda^{n-1}+\cdots +a_1 \lambda+a_0 = 0
+\end{gather*}
+这个关于$\lambda$得方程被称为特征方程，解这个特征方程得到特征根：
+\begin{gather*}
+    (\lambda-\lambda_1)^{k_1}(\lambda-\lambda_2)^{k_2}\cdots(\lambda-\lambda_n)^{k_n} = 0
+\end{gather*}
+其中$\lambda=\lambda_1$被称为$\lambda$得$k_1$重根，其他$lambda$得表示方法类似，那么我们可以得到关于该微分方程解得一组basis，他们可以这样表示：
+\begin{align*}
+    \{\{r^{k_j-1}e^{\lambda_j}\}_{j=1}^n\} =\{e^{\lambda_j},xe^{\lambda_j},\cdots\}_{j=1}^n
+\end{align*}
+以二阶线性微分方程为例子：
+\begin{align*}
+    y''+ay'+by = 0 \\
+    \lambda^2+a\lambda+b = 0
+\end{align*}
+\begin{align*}
+     & 1. \Delta>0,\quad \lambda_1 = \frac{-a+\sqrt{a^2-4b}}{2}\quad \lambda_2 =
+    \frac{-b-\sqrt{a^2-4b}}{2}                                                       \\
+     & \{e^{\lambda_1 t},e^{\lambda_2 t}\}\quad y = Ae^{\lambda_1 t}+e^{\lambda_2 t} \\
+     & 2. \Delta = 0, \quad \lambda_1=\lambda_2 = \frac{-a}{2}                       \\
+     & \{e^{-at/2},te^{-at/2}\}\quad y = Ae^{-at/2}+Bte^{-at/2}                      \\
+     & 3.\Delta<0,\quad \lambda_1 = \frac{-a+i\sqrt{4b-a^2}}{2}\quad \lambda_2
+    =\frac{-a-i\sqrt{4b-a^2}}{2}                                                     \\
+     & \{e^{i\omega},e^{-i\omega}\}\quad y =e^{-a/2}(Ae^{i\omega}+Be^{-i\omega})
+\end{align*}
+\subsection{非齐次N阶线性微分方程(IHNOLDE)}
+对于非齐次情况，补充以下定理，即可方便得求出特解，齐次通解和非齐次特解相加即为非齐次
+方程得通解：HNOLDE右边得0变为$r(x)$就是IHNOLDE。
+
+当$r(x)=e^{\lambda x}S(x)$时，其中$S(x)$为任意多项式，，则非齐次方程有如下特解
+$y = e^{\lambda x} q(x)$，$\lambda \neq \lambda_j$时，$q(x)$ 的次数和$S(x)$相同
+，$\lambda=\lambda_j$时，$q(x)$的次数为$S(x)$的次数加上$n$，其中n表示n重根。
+
+example:$y''-y=xe^x$
+\begin{align*}
+     & \lambda_1 = 1,\lambda_2=-1                                       \\
+     & y = C_1e^x+C_2e^{-x}+f(x)                                        \\
+     & q(x)e^{\lambda x} = (ax^2+bx+c)e^x\quad (\lambda=\lambda_1, n=1) \\
+     & y = C_1 e^x+C_2 e^{-x}+\frac{1}{4}(x^2-x)e^x
+\end{align*}
+\subsection{WKB方法}
+当方程$y''+q(x)y=0$中的$q(x)$变化十分缓慢时，可以视为const，然后解这个方程，
+这就是WKB方法。
+\end{document}
